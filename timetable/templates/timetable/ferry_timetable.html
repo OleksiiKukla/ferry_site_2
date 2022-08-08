@@ -1,0 +1,21 @@
+{% extends 'timetable/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h3 class="footer-heading"><span>Ferry from {{ departure }} to {{ arrival }}</span></h3>
+    {% for ferry in ferries %}
+    <ul>
+
+           Date - {{ ferry.date }}, Name -{{ ferry.name }}, Port departure - {{ ferry.port_departure }} , Time departure - {{ ferry.time_departure }}, Port arrival - {{ ferry.port_arrival }}, Time arrival - {{ ferry.time_arrival }}
+
+    </ul>
+    {% endfor %}
+    * arrival next day
+</div>
+
+{% endblock %}

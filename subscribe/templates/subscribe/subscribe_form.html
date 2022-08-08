@@ -1,0 +1,27 @@
+{% extends 'timetable/base.html' %}
+{% load static %}
+
+{% block image_up %}
+<div class="intro-section" style="background-image: url({% static 'timetable/images/ferry-crossings.jpg' %});">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 mx-auto text-center" data-aos="fade-up">
+              <h1>Subscribe</h1>
+                <form action="", method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div>
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
+
+                    {% endfor %}
+                    <button type="submit" > Subscribe </button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock%}
+
+
