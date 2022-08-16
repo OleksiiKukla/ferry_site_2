@@ -18,6 +18,7 @@ def parser_polferries():
 
     for items in find_month:
         month.append(items.get_text())
+
     month_list = []
 
     for i in month:             # выделяем в словарь месяц и год
@@ -80,15 +81,14 @@ def ferry_home(request):
     return render(request, 'timetable/ferry_home.html')
 
 
+
 def ferry_timetable(request, country_departure:str , country_arrival:str):
     country_arrival = Port.objects.get(country=country_arrival)
     port_arrival = country_arrival.name
     current_datetime = datetime.now()
     date = f'{current_datetime.year}-{current_datetime.month}-{current_datetime.day}'
     ferries = Ferry.objects.all()
-    ferries = ferries.filter(port_arrival = port_arrival)
-    ferries = ferries.filter(date__gte = date)
-    ferries = ferries.order_by('date')[:10]
+    ferries = ferries.filter(port_arrival = port_arrival).filter(date__gte = date).order_by('date')[:10]
     port_departure = Port.objects.get(country=country_departure)
     port_departure = port_departure.name
     return render(request, 'timetable/ferry_timetable.html', context={'ferries':ferries, 'departure': country_departure, 'arrival': country_arrival})

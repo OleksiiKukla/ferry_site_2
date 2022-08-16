@@ -125,7 +125,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'f0bc7b7d352c3c'
-EMAIL_HOST_PASSWORD = 'c2d91e5b2e047c'
-EMAIL_PORT = '2525'
+EMAIL_HOST = 'smtp.ukr.net'
+EMAIL_HOST_USER = 'ferry.timetable@ukr.net'
+EMAIL_HOST_PASSWORD = 'Ferrytimetable123'
+EMAIL_PORT = '2525'#465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
