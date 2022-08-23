@@ -21,5 +21,7 @@ urlpatterns = [
     path('', views.main_page, name = 'home'),
     path('ferry/', include('timetable.urls')),
     path('subscribe/', include('subscribe.urls')),
+    path('api/', include('drf.urls')),
     path('admin/', admin.site.urls),
+
 ]

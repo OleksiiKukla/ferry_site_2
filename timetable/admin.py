@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import Ferry, Port
+
 # Register your models here.
 
+#admin.site.register(Ferry, Port) или так
 @admin.register(Port)
 class PortAdmin(admin.ModelAdmin):
     list_display = ['name', 'country']

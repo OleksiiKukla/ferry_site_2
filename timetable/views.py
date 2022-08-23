@@ -1,10 +1,17 @@
 import requests
+
 from bs4 import BeautifulSoup
+
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
+
 from datetime import datetime
+
 from .models import Ferry, Port
-from django.views.generic import ListView, DetailView
+
+
+
+
 
 def parser_polferries():
     '''Parser timetable https://polferries.pl/cargo/rozklad.html?code=sy '''

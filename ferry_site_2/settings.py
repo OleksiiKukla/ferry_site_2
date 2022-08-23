@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'timetable',
     'subscribe',
+    'rest_framework',
+    'drf',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,3 +133,11 @@ EMAIL_HOST_PASSWORD = 'Ferrytimetable123'
 EMAIL_PORT = '2525'#465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer', #если закоментить показывает API не в браузере а Json инфо
+    ]
+}
