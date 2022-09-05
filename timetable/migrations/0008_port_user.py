@@ -9,14 +9,19 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('timetable', '0007_alter_port_boat'),
+        ("timetable", "0007_alter_port_boat"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='port',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL, verbose_name='User'),
+            model_name="port",
+            name="user",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.PROTECT,
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="User",
+            ),
             preserve_default=False,
         ),
     ]

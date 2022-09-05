@@ -5,7 +5,6 @@ from django.urls import reverse
 # Create your models here.
 
 
-
 class Ferry(models.Model):
 
     name = models.CharField(max_length=30)
@@ -16,7 +15,7 @@ class Ferry(models.Model):
     port_arrival = models.CharField(max_length=30, null=True)
 
     def __str__(self):
-        return f'{self.name} {self.date} {self.time_departure} {self.port_departure} '
+        return f"{self.name} {self.date} {self.time_departure} {self.port_departure} "
 
 
 class Port(models.Model):
@@ -24,7 +23,7 @@ class Port(models.Model):
     name = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
     boat = models.ManyToManyField(Ferry, null=True)
-    user = models.ForeignKey(User, verbose_name='User', on_delete=models.PROTECT)
+    user = models.ForeignKey(User, verbose_name="User", on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'{self.name} {self.country} '
+        return f"{self.name} {self.country} "

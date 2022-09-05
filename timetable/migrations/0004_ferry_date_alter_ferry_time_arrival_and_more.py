@@ -6,23 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('timetable', '0003_ferry_port_arrival_ferry_port_departure'),
+        ("timetable", "0003_ferry_port_arrival_ferry_port_departure"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ferry',
-            name='date',
+            model_name="ferry",
+            name="date",
             field=models.DateField(null=True),
         ),
         migrations.AlterField(
-            model_name='ferry',
-            name='time_arrival',
+            model_name="ferry",
+            name="time_arrival",
             field=models.CharField(max_length=30, null=True),
         ),
         migrations.AlterField(
-            model_name='ferry',
-            name='time_departure',
+            model_name="ferry",
+            name="time_departure",
             field=models.CharField(max_length=30, null=True),
         ),
     ]

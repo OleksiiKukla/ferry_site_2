@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('timetable', '0001_initial'),
+        ("timetable", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ferry',
-            name='time_arrival',
+            model_name="ferry",
+            name="time_arrival",
             field=models.TimeField(null=True),
         ),
         migrations.AddField(
-            model_name='ferry',
-            name='time_departure',
+            model_name="ferry",
+            name="time_departure",
             field=models.TimeField(null=True),
         ),
     ]
